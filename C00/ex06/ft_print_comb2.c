@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft__print__comb2.c                                 :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 23:15:05 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/16 11:38:40 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/09/21 22:13:14 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-void ft_putchar(char a)
+//#include <unistd.h>
+
+void	ft_putchar(char a)
 {
 	write(1, &a, 1);
 }
 
-
-void ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
 	int	a;
 	int	b;
@@ -32,24 +32,23 @@ void ft_print_comb2(void)
 			ft_putchar(a % 10 + '0');
 			ft_putchar(32);
 			ft_putchar(b / 10 + '0');
-                        ft_putchar(b % 10 + '0');
-			if(a == 98 && b == 99)
-                        {
-                                return;
-                        }
-
+			ft_putchar(b % 10 + '0');
+			if (a == 98 && b == 99)
+			{
+				return (0);
+			}
 			ft_putchar(44);
 			ft_putchar(32);
-			b++;	
+			b++;
 		}
 	a++;
 	b = a + 1;
-
+	}
 }
-}
 
-int main()
+/*int main()
 {
 	ft_print_comb2();
 	return 0;
 }
+*/

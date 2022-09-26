@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 16:33:09 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/25 20:26:48 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/09/25 22:31:52 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ int    ft_check_col(int k, int **tab, int col)
                 j++;
         }
         return (1);
+}
+
+int     ft_is_finish(int **tab);
 
 int	ft_valid_is_good( int **tab, int position)
 {
@@ -71,7 +74,7 @@ int	ft_valid_is_good( int **tab, int position)
 		if(ft_check_line(backtracking, tab, i) && ft_check_col(backtracking, tab, j))
 		{
 			tab[i][j] = backtracking;
-			if(ft_valid_good(tab, position + 1)
+			if(ft_valid_is_good(tab, position + 1))
 					return (1);
 		}
 		backtracking++;
@@ -91,6 +94,8 @@ int	ft_is_finish(int **tab)
 
 	tab_sol_i = 0;
         tab_sol_j = 0;
+	tab_i = 0;
+	tab_j = 0;
 
 	while(tab_sol_i < 4)
 	{
@@ -172,13 +177,10 @@ int	ft_is_finish(int **tab)
                                         return (0);
                                 tab_i++;
                         }
-
-
-
 			tab_sol_j++;
 		}
-
 		tab_sol_i++;
+		tab_sol_j = 0;
 		if (tab_sol_i == 1)
 			tab_j = 0;
 		if (tab_sol_i >= 2)
@@ -187,7 +189,7 @@ int	ft_is_finish(int **tab)
 	return (1);
 }
 
-int	**ft_tab_sol(char **str)
+int	**ft_tab_sol(char *str)
 {
 	int	i;
 	int	j;
@@ -203,15 +205,67 @@ int	**ft_tab_sol(char **str)
 	{
 		tab[i] = malloc(sizeof(int) * 4);
 		while(j < 4)
-		{
-			tab[i][j] = str[1][k] - '0';
-			j++;
-			k = k + 2;
-		}
+                {
+                        tab[i][j] = str[k] - '0';
+                        j++;
+                        k = k + 2;
+               	}
 		i++;
+		j = 0;
 	}
+
 	return (tab);
 }
+
+void    ft_print_tab(int **tab)
+{
+        int     i;
+        int     j;
+
+        i = 0;
+        while (i < 4)
+        {
+                j = 0;
+                while (j < 4)
+                {
+                        ft_putchar(tab[i][j] + '0');
+                        if (j != 3)
+                                ft_putchar(' ');
+                        j++;
+                }
+                ft_putchar('\n');
+                i++;
+        }
+}
+
+
+int     main(int ac, char **av)
+{
+
+        int **tab;
+        int i = 0;
+
+        tab_sol = ft_tab_sol(av[1]);
+        tab = malloc(4 * sizeof(int *));
+        while(i < 4)
+        {
+                tab[i] = malloc(4 * sizeof(int));
+                i++;
+        }
+        --i;
+        while (!ft_valid_is_good(tab, 0)){}
+        ft_print_tab(tab);
+        while(i > -1)
+        {
+                tab[i] = malloc(4 * sizeof(int));
+                free (tab[i]);
+                i--;
+        }
+        free(tab);
+	free(tab_sol);
+        return (0);
+}
+
 
 	/* a 1 2 3 2 a */
 	/* 1 x x x x 2 */

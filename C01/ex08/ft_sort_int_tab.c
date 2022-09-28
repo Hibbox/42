@@ -1,54 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 14:45:03 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/27 23:10:05 by rmondong         ###   ########.fr       */
+/*   Created: 2022/09/28 11:16:50 by rmondong          #+#    #+#             */
+/*   Updated: 2022/09/28 14:05:19 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int i;
-	int j;
-	int temp;
+	int	i;
+	int	j;
+	int	temp;
 
 	i = 0;
-	j = size-1;
-	while(i < (size / 2))
+	while (i < size - 1)
 	{
-		temp = tab[i];
-		tab[i] = tab[j];
-		tab[j] = temp;
+		j = 0;
+		while (j < size - 1)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				temp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = temp;
+				j++;
+			}
+			j++;
+		}
 		i++;
-		j--;
 	}
 }
+
 /*
 int main()
 {
-	int tab[] = {85,86,87,88,89};
-
-	int i;
-	int size = 5;
-
-	ft_rev_int_tab(tab,size);
+	int	chaine[] = {18, 68, 45, 58, 13, 0};
+	int	i;
+	int	size;
+	
 	i = 0;
-	printf("[");
-	while(tab[i] != tab[size])
+	size = 6;
+	ft_sort_int_tab(chaine, size);
+	while (chaine[i] < size)
 	{
-		printf("%d", tab[i]);
-		if(i != size-1)
-		{
-			printf(",");
-		}
-		i++;	
-	}
+	printf("[");
+	printf("apres : %d", chaine[i]);
 	printf("]");
+	i++;
+	}
 }
 */

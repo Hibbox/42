@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft__ultimate__div__mod.c                           :+:      :+:    :+:   */
+/*   ft__swap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 21:59:58 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/19 23:08:28 by rmondong         ###   ########.fr       */
+/*   Created: 2022/09/19 20:42:54 by rmondong          #+#    #+#             */
+/*   Updated: 2022/09/27 22:52:20 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
 
-void	ft_ultimate_div_mod(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
+	int	temp;
 
-	int nb;
-	int nb2;
-
-	nb = *a;
-	nb2 = *b;
-	*a = nb / nb2;
-	*b = nb % nb2;
+	temp = 0;
+	temp = *b;
+	*b = *a;
+	*a = temp;
 }
 /*
-int main()
+void main()
+
 {
-	int a = 53;
-	int b = 10;
+	int a = 42;
+	int a_bis = 24;
 	
+	printf("la valeur de a est %d\n",a);
+	printf("la valeur de a_bis est %d\n",a_bis);
 
-	ft_ultimate_div_mod(&a, &b);
+	ft_swap(&a, &a_bis);
 
-	printf("le quotient vaux : %d \n", a);
-        printf("le reste vaux : %d \n", b);
+
+	printf("la valeur de a a changer a %d\n",a);
+	printf("la valeur de a_bis a changer a %d\n",a_bis);
 }
 */

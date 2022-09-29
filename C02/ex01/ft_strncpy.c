@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 09:25:31 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/21 11:34:21 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/09/29 12:33:14 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
-	while(i < n && src[i] != '\0')
+	while (i < n && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while ( i < n )
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
 	}
-	return dest;
+	return (dest);
 }
 
 /*int main()
@@ -47,4 +46,3 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	printf("apres :%s < %s",dest, src);
 }
 */
-

@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 11:37:42 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/21 13:31:16 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/09/29 12:30:51 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
 }
-
+/*
 int main()
 {
 	char dest[] = "ronald";
@@ -36,4 +36,4 @@ int main()
 
 	printf("apres :%s < %s",dest, src);
 }
-
+*/

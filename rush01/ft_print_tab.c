@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 16:33:09 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/25 22:31:52 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/09/29 20:51:11 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_putchar(char c)
 
 int	ft_check_line(int k, int **tab, int line)
 {
-	int	i;
 	int	j;
 
 	j = 0;
@@ -39,7 +38,6 @@ int	ft_check_line(int k, int **tab, int line)
 }
 int    ft_check_col(int k, int **tab, int col)
 {
-        int     i;
         int     j;      
 
         j = 0;
@@ -241,6 +239,7 @@ void    ft_print_tab(int **tab)
 
 int     main(int ac, char **av)
 {
+	(void) ac;
 
         int **tab;
         int i = 0;

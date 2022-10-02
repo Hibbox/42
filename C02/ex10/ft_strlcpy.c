@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/03 00:37:08 by rmondong          #+#    #+#             */
+/*   Updated: 2022/10/03 00:37:31 by rmondong         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
@@ -11,7 +23,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		++n;
 	}
 	i = 0;
-	while (src[i] && i < ( size - 1))
+	while (src[i] && i < (size - 1))
 	{
 		dest[i] = src[i];
 		++i;

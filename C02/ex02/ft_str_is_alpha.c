@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 12:38:38 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/01 01:47:58 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/03 00:02:57 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ int	ft_str_is_alpha(char*str)
 	}
 	return (1);
 }
-
+/*
 int	main()
 {
 	char	chaine[7] = {""};
 	printf("%d", ft_str_is_alpha(chaine));
 }
+*/

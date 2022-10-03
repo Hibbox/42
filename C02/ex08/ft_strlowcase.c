@@ -6,20 +6,21 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 20:33:27 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/30 13:07:43 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:02:09 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0' && (str[i] >= 'A' && str[i] <= 'Z'))
+	while (str[i] != '\0')
 	{
-		str[i] = str[i] + 32;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
 		i++;
 	}
 	return (str);

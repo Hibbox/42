@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:55:03 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/03 14:48:11 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/04 00:15:34 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_str_is_printable(char *str)
 	int	i;
 
 	i = 0;
+	if (str[i] == 0)
+		return (1);
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 32 && str[i] <= 126)
@@ -25,11 +27,10 @@ int	ft_str_is_printable(char *str)
 	}
 	return (0);
 }
-
 /*
 int main()
 {
-        char str[] = "\n";
+        char str[] = "";
 
         printf("%d", ft_str_is_printable(str));
         

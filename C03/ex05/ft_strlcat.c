@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:49:44 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/03 19:58:52 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:16:43 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -27,37 +27,36 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
-	int	len;
+	int	lensrc;
+	int	lendest;
 
-	if (size == 0);
-	{
-		return(ft_strlen(src));
-	}
+	lendest = ft_strlen(dest);
+	lensrc = ft_strlen(src);
+
+	if (size <= lendest)
+		return (size + lensrc);
 	i = 0;
-	while(src[i])
+	while (src[i] && lendest + i < size - 1)
 	{
+		dest[lendest + i] = src[i];
 		i++;
 	}
-	j = 0;
-	while(src[j] && i < size - 1)
-	{
-		dest[i + j] = src[i];
-		j++;
-	}
-	dest[i + j] = '\0';
-	len = ft_strlen(src);
-	return (len + ft_strlen(dest[j]));
+	dest[lendest + i] = '\0';
+	return (i + lendest);
 }
-
+/*
 int main()
 {
-	int *src;
+	char *src;
 	int *dest;
 
+	dest = malloc(sizeof(int) * 10);
+	dest[0];
+	dest[1]
 	src = "salut";
-	dest = "toi";
+	dest = "to\0iii";
+	//dest[2] = 'b';
+	ft_strlcat(dest,"123",5);
+	printf("%s",dest);
 
-	ft_strlcat(*dest,*src,3);
-	printf("%d",*dest);
-
-}
+}*/

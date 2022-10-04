@@ -6,11 +6,11 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:55:03 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/04 00:15:34 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:25:46 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 int	ft_str_is_printable(char *str)
 {
@@ -22,17 +22,18 @@ int	ft_str_is_printable(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 32 && str[i] <= 126)
-			return (1);
-		i++;
+			i++;
+		else
+			return (0);
 	}
-	return (0);
+	return (1);
 }
-/*
+
 int main()
 {
-        char str[] = "";
+        char str[] = " \n xhfd";
 
         printf("%d", ft_str_is_printable(str));
         
 }
-*/
+

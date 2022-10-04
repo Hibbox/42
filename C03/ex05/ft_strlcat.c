@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:49:44 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/04 15:16:43 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/04 19:14:26 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -14,49 +14,44 @@
 int	ft_strlen(char *str)
 {
 	int	i;
-	
+
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		i++;
 	}
 	return (i);
 }
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	j;
-	int	lensrc;
-	int	lendest;
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{	
+	int	i;
+	int	len_src;
+	int	len_dest;
 
-	lendest = ft_strlen(dest);
-	lensrc = ft_strlen(src);
-
-	if (size <= lendest)
-		return (size + lensrc);
+	len_dest = ft_strlen(dest);
+	len_src = ft_strlen(src);
+	if (size <= len_dest)
+		return (size + len_src);
 	i = 0;
-	while (src[i] && lendest + i < size - 1)
+	while (src[i] && len_dest + (unsigned) i <= size - 1)
 	{
-		dest[lendest + i] = src[i];
+		dest[len_dest + i] = src[i];
 		i++;
 	}
-	dest[lendest + i] = '\0';
-	return (i + lendest);
+	dest[len_dest + i] = '\0';
+	return (i + len_dest);
 }
 /*
 int main()
 {
-	char *src;
-	int *dest;
+	char src[] = "salut";
+	char dest[] = "toi";
 
-	dest = malloc(sizeof(int) * 10);
-	dest[0];
-	dest[1]
-	src = "salut";
-	dest = "to\0iii";
+	//dest = malloc(sizeof(int) * 10);
 	//dest[2] = 'b';
-	ft_strlcat(dest,"123",5);
+	ft_strlcat(dest,src,5);
 	printf("%s",dest);
 
-}*/
+}
+*/

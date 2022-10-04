@@ -1,44 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 00:16:28 by rmondong          #+#    #+#             */
-/*   Updated: 2022/09/23 02:16:09 by rmondong         ###   ########.fr       */
+/*   Created: 2022/10/03 22:59:41 by rmondong          #+#    #+#             */
+/*   Updated: 2022/10/04 02:13:09 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-#include <stdio.h>
-
-char	*ft_strcat(char *dest, char *src)
+void	ft_putchar(char c)
 {
-	int 	i;
-	int	n;
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return ;
+}
+
+int	ft_strlen(char *str)
+{
+	int	i;
 
 	i = 0;
-	n = 0;
-
-	while (dest[i] != '\0')
+	while(str[i])
 	{
 		i++;
 	}
-	while(src[n] != '\0')
-	{
-		dest[i + n] = src[n];
-		n++;
-	}
-	dest[i+n]= '\0';
-
+	return (i);
 }
 
-int main()
+int	main(int ac, char **av)
 {
-	char	src[]="ffff";
-	char	dest[100]="iiiii";
+	int	n;
 
-	printf("%s,", dest);
-	ft_strcat(dest,src);
-	printf("%s,", dest);
+	n = 1;
+	while (n < ac)
+	{
+		write(1, av[ac - n], ft_strlen(av[ac - n]));
+		write(1, "\n", 1);
+		n++;
+	}
 }

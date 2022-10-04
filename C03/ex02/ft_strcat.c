@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 20:24:13 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/02 20:40:42 by rmondong         ###   ########.fr       */
+/*   Created: 2022/09/23 00:16:28 by rmondong          #+#    #+#             */
+/*   Updated: 2022/10/02 19:19:12 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
+	int	n;
 
 	i = 0;
-	while (s1[i] == s2[i] && (s1[i] && s2[i]) && i < n - 1)
+	n = 0;
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	while (src[n] != '\0')
+	{
+		dest[i + n] = src[n];
+		n++;
+	}
+	dest[i + n] = '\0';
 }
-/*
-int     main()
-{
-        char    str[] = "rrrrrrrrrrrrrrrrr";
-        char    str2[] = "rrrrrrrrrrrrrrrg";
 
-        printf("%d",ft_strncmp(str,str2,10));
+/*
+int main()
+{
+	char	src[]="ffff";
+	char	dest[100]="iiiii";
+
+	printf("%s,", dest);
+	ft_strcat(dest,src);
+	printf("%s,", dest);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:34:41 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/03 13:29:45 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:47:28 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /*#include <unistd.h>
@@ -22,15 +22,15 @@ char	*ft_strstr(char *str, char *to_find)
 	while (str[i] != '\0')
 	{
 		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j])
+		while (str[i + j] == to_find[j])
 		{
 			if (to_find[j + 1] != '\0')
 			{
-				return (&str[i]);
+				return (str + i);
 			}
-			++j;
+			j++;
 		}
-		++i;
+		i++;
 	}
 	return (0);
 }

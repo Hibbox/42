@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
@@ -21,7 +21,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	while (dest[n] != '\0')
 		n++;
 	i = 0;
-	while ((dest[i] != '\0' && dest[n] != '\0') && i < nb - 1)
+	while (src[i] && i < nb )
 	{	
 		dest[n + i] = src[i];
 		i++;
@@ -29,7 +29,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	dest[i + n] = '\0';
 	return (dest);
 }
-/*
+
 int main()
 {
         char    src[]="ffff";
@@ -39,4 +39,4 @@ int main()
         ft_strncat(dest,src,2);
         printf("%s,", dest);
 }
-*/
+

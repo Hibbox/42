@@ -6,11 +6,11 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:55:03 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/04 20:25:46 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:27:45 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_str_is_printable(char *str)
 {
@@ -28,7 +28,7 @@ int	ft_str_is_printable(char *str)
 	}
 	return (1);
 }
-
+/*
 int main()
 {
         char str[] = " \n xhfd";
@@ -36,4 +36,4 @@ int main()
         printf("%d", ft_str_is_printable(str));
         
 }
-
+*/

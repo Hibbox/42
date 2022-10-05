@@ -6,11 +6,11 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:34:41 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/05 12:47:28 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:45:59 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <unistd.h>
-#include <stdio.h>*/
+#include <unistd.h>
+#include <stdio.h>
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
@@ -24,7 +24,7 @@ char	*ft_strstr(char *str, char *to_find)
 		j = 0;
 		while (str[i + j] == to_find[j])
 		{
-			if (to_find[j + 1] != '\0')
+			if (to_find[j + 1] == '\0')
 			{
 				return (str + i);
 			}
@@ -32,7 +32,7 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return (0);
+	return (to_find);
 }
 /*
 int main()
@@ -43,5 +43,6 @@ int main()
 
 	findit = ft_strstr(heystack, needle);
 	printf("trouver %s\n", findit);
+	return (0);
 }
 */

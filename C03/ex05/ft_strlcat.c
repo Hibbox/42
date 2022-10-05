@@ -6,11 +6,11 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:49:44 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/05 12:53:10 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:53:44 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -35,7 +35,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	if (size <= len_dest)
 		return (size + len_src);
 	i = 0;
-	while (src[i] && len_dest + i <= size - 1)
+	while (src[i] && len_dest + 1 <= size)
 	{
 		dest[len_dest + i] = src[i];
 		i++;
@@ -43,11 +43,11 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[len_dest + i] = '\0';
 	return (i + len_dest);
 }
-/*
+
 int main()
 {
 	char src[] = "salut";
-	char dest[] = "toi";
+	char dest[10] = "toi";
 
 	//dest = malloc(sizeof(int) * 10);
 	//dest[2] = 'b';
@@ -55,4 +55,4 @@ int main()
 	printf("%s",dest);
 
 }
-*/
+

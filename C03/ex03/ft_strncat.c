@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 00:14:14 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/05 18:35:18 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:50:17 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	unsigned int	i;
 	unsigned int	n;
 
+	n = 0;
 	if (n == 0)
 		return (0);
 	n = 0;

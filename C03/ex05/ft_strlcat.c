@@ -6,7 +6,7 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:49:44 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/05 18:53:44 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:48:40 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[len_dest + i] = '\0';
 	return (i + len_dest);
 }
-
+/*
 int main()
 {
 	char src[] = "salut";
@@ -55,4 +55,4 @@ int main()
 	printf("%s",dest);
 
 }
-
+*/

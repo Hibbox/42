@@ -6,11 +6,12 @@
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:34:41 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/05 18:45:59 by rmondong         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:47:57 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 #include <stdio.h>
+
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;

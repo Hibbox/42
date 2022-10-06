@@ -1,50 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   atoiv3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:34:41 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/06 19:48:00 by rmondong         ###   ########.fr       */
+/*   Created: 2022/10/06 11:52:49 by rmondong          #+#    #+#             */
+/*   Updated: 2022/10/06 12:41:07 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-#include <stdio.h>
 
-char	*ft_strstr(char *str, char *to_find)
+#include <unistd.h>
+
+int	ft_atoi(char *str)
 {
 	int	i;
-	int	j;
+	int	sign;
+	int	ret;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	sign = 1;
+	ret = 0;
+	while (str[i] && ((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
+		i++;
+	while(str[i] && (str[i] == '+' || str[i] == '-'))
 	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return (str + i);
-			}
-			else
-				return (NULL);
-			j++;
-		}
+		if( str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return (str);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		ret *= 10;
+		ret += str[i] - '0';
+		i++;
+	}
+	return (ret * sign);
+
 }
 
-int main()
+int main ()
 {
-	char	heystack[]="recall";
-	char	needle[]="blabla";
-	char	*findit;
-
-	findit = ft_strstr(heystack, needle);
-	printf("%s\n", findit);
-	return (0);
+	printf("%d", ft_atoi("--++--+1234"));
 }

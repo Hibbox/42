@@ -1,50 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:34:41 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/06 19:48:00 by rmondong         ###   ########.fr       */
+/*   Created: 2022/10/06 20:10:25 by rmondong          #+#    #+#             */
+/*   Updated: 2022/10/06 20:19:16 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
+void	ft_revprint(char *str)
 
-char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return (str + i);
-			}
-			else
-				return (NULL);
-			j++;
-		}
+	while(str[i])
 		i++;
+	while(i >= 0)
+	{
+		write(1, &str[i], 1);
+		i--;
 	}
-	return (str);
+	return ;
 }
 
-int main()
+int main(int ac, char **av)
 {
-	char	heystack[]="recall";
-	char	needle[]="blabla";
-	char	*findit;
+	int i;
 
-	findit = ft_strstr(heystack, needle);
-	printf("%s\n", findit);
-	return (0);
+	i = 0;
+	if(ac == 2)
+	{
+		ft_revprint(av[1]);
+	}
 }

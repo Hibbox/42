@@ -1,50 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   aff_av2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmondong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 11:34:41 by rmondong          #+#    #+#             */
-/*   Updated: 2022/10/06 19:48:00 by rmondong         ###   ########.fr       */
+/*   Created: 2022/09/29 23:43:48 by rmondong          #+#    #+#             */
+/*   Updated: 2022/09/30 00:46:51 by rmondong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
 
-char	*ft_strstr(char *str, char *to_find)
+void	ft_putchar( char c)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (str[i + j] == to_find[j])
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return (str + i);
-			}
-			else
-				return (NULL);
-			j++;
-		}
-		i++;
-	}
-	return (str);
+	write(1, &c, 1);
 }
 
-int main()
+void	ft_putstr(char *str)
 {
-	char	heystack[]="recall";
-	char	needle[]="blabla";
-	char	*findit;
+	int	i;
 
-	findit = ft_strstr(heystack, needle);
-	printf("%s\n", findit);
+	i = 0;
+	while(str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return ;
+}
+
+int	main( int ac, char **av)
+{
+	int	i;
+
+	i = 0;
+	if (ac == 2)
+	{
+		while(av[1][i] != '\0')
+		{
+			if(av[1][i] == 'a')
+			{
+				ft_putstr("a");
+				break;
+			}
+			i++;
+		}
+	}
+	else if (ac == 1)
+	{
+		ft_putstr("a");
+
+	}
+	ft_putstr("\n");
 	return (0);
 }
